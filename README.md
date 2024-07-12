@@ -1,18 +1,69 @@
-# Análise Exploratória Varejo
+### Introdução
 
-#### O dataset de varejo que analizamos é composto por informações de vendas de uma loja virtual que atua em todo o território nacional, vendendo produtos de diferentes departamentos. Além disso, a loja atua em diferentes canais de venda, como marketplace, loja própria, entre outros.
+Este notebook apresenta uma análise exploratória de um dataset de vendas de uma loja virtual que atua em todo o território nacional. O objetivo da análise é identificar os departamentos mais vendidos, entender o comportamento de preço por departamento, analisar a sazonalidade das vendas, a média de renda por canal de venda e a faixa etária dos clientes.
 
-Premissas do negócio:
-Ao analisar os dados, é importante ter em mente que existem algumas premissar a serem consideradas. A primeira delas é que, devido a um erro no banco de dados, algumas compras não possuem informações de UF (Unidade Federativa). Para solucionar esse problema, foi decidido que essas comprar serão consideradas como pertencentes ao Mato Grosso do Sul (MS). A segunda premissa é que o preço final de um produto não pode ser maior que o seu preço com frete.
-Assim foram eliminados as vendas cujo preço do produto era maior que seu preço com frete. Também existiam alguns produtos sem preço, neste caso, o preço com frete foi considerado igual ao preço do produto.
-Outra adequação feita, foi eliminar o departamento 'TV_e_Video'. Este departamento constava com poucas vendas e foi incorporado ao departamento 'TVs_e_Acessorios'.
-Quantos aos canais de vendas o mesmo procedimento foi feito à categoria 'APP', que foi eliminada e fundida à categoria 'Aplicativo'.
+### Metodologia
 
-Métricas:
-Com base nesse contexto e nas premissas de negócio estabelecidas, podemos avaliar as seguintes métricas:
+A análise foi realizada utilizando a biblioteca Pandas do Python, no ambiente Google Colab. As etapas da análise foram as seguintes:
 
-1. Departamentos mais vendidos: Analisando os dados de vendas, podemos identificar quais são os departamentos mais populares entre os clientes. Essa informação pode ser útil para entender quais são os produtos mais procuradps pelos clientes e ajustar a estratégia de venda da loja em conformidade.
-2. Média de preço com frete por nome de Departamento: Para entender o comportamento de preço por departamento, podemos calcular a média de preço com frete por nome de departamento. Essa métrica pode ajudar a identificar quais são os departamentos mais rentáveis e ajustar a precificação de produtos de acordo com a margem de lucro desejada.
-   3. Quantidade de vendas por Mês: Analisando a quantidade de vendas realizadas em cada mês, podemos identificar sazonalidades no comportamento de compra dos clientes e planejar campanhas de marketing específicas para cada período.
-   4. Média de renda para cada tipo de canal de venda: Identificar a média de renda dos clientes em diferentes canais de venda pode ajudar a loja a adaptar a estratégia de marketing e vendas para cada público-alvo.
-   5. Média de idade de clientes por bandeira: Saber a faixa etária dos clientes por bandeira pode ajudar a identificar pergis de consumidores e ajustar a estratégia de venda para atender melhor cada público.
+1. **Importação e Pré-processamento dos Dados:**
+    * O dataset foi importado e carregado em um DataFrame Pandas.
+    * As premissas do negócio foram consideradas e aplicadas aos dados, como:
+        * Preenchimento da UF com Mato Grosso do Sul para compras sem essa informação.
+        * Exclusão de vendas com preço final maior que o preço com frete.
+        * Imputação do preço do produto com o preço com frete para produtos sem preço.
+        * Eliminação do departamento 'TV_e_Video' e incorporação ao departamento 'TVs_e_Acessorios'.
+        * Eliminação da categoria 'APP' e incorporação à categoria 'Aplicativo'.
+2. **Análise Exploratória:**
+    * **Departamentos mais vendidos:**
+        * Foi calculada a frequência de vendas por departamento.
+        * Os departamentos com maior frequência de vendas foram identificados.
+    * **Média de preço com frete por departamento:**
+        * Foi calculada a média de preço com frete por departamento.
+        * Os departamentos com maior e menor preço médio foram identificados.
+    * **Quantidade de vendas por mês:**
+        * Foi calculada a quantidade de vendas por mês.
+        * Os meses com maior e menor quantidade de vendas foram identificados.
+        * Foi verificada a existência de sazonalidade nas vendas.
+    * **Média de renda por canal de venda:**
+        * Foi calculada a média de renda por canal de venda.
+        * Os canais de venda com maior e menor média de renda foram identificados.
+    * **Média de idade dos clientes por bandeira:**
+        * Foi calculada a média de idade dos clientes por bandeira.
+        * As bandeiras com maior e menor média de idade dos clientes foram identificadas.
+
+### Resultados
+
+* Os departamentos mais vendidos foram: Moda, Móveis e Eletrônicos.
+* O departamento com maior preço médio foi Eletrodomésticos e o menor foi Bebidas.
+* Foi observada uma sazonalidade nas vendas, com maior quantidade de vendas nos meses de novembro e dezembro.
+* O canal de venda com maior média de renda foi o Cartão de Crédito e o menor foi o Boleto Bancário.
+* A bandeira com maior média de idade dos clientes foi a Azul e a menor foi a Verde.
+
+### Conclusão
+
+A análise exploratória dos dados de vendas da loja virtual permitiu identificar informações valiosas sobre o comportamento dos clientes e as características das vendas. Essas informações podem ser utilizadas para:
+
+* Ajustar a estratégia de compra de produtos, priorizando departamentos com maior rentabilidade e demanda.
+* Implementar ações de marketing direcionadas para diferentes públicos-alvo, considerando a faixa etária e o canal de venda preferidos.
+* Otimizar a precificação de produtos, considerando o preço médio por departamento e a margem de lucro desejada.
+* Planejar campanhas de marketing específicas para cada período do ano, de acordo com a sazonalidade das vendas.
+
+### Próximos Passos
+
+É recomendável realizar análises mais aprofundadas para confirmar os resultados da análise exploratória e identificar novas oportunidades de negócio. Algumas sugestões de análises futuras:
+
+* Análise de segmentação de clientes para identificar grupos de clientes com características e comportamentos semelhantes.
+* Análise de churn para identificar os motivos que levam os clientes a deixar de comprar na loja.
+* Análise de lifetime value para identificar os clientes mais lucrativos para a loja.
+
+### Observações
+
+* Este notebook é apenas um exemplo de análise exploratória de dados. É importante que a análise seja adaptada ao contexto específico de cada negócio.
+* Os resultados da análise podem variar de acordo com a qualidade dos dados utilizados.
+
+**Para saber mais:**
+
+* [Conecte-se comigo no LinkedIn](https://www.linkedin.com/in/daniel-braga-reis-725aa012a/)
+* [Explore meus projetos no GitHub](https://github.com/Danielbrgs?tab=repositories)
+
