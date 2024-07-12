@@ -1,9 +1,9 @@
-# biblioteca_pandas
+# Análise Exploratória Varejo
 
-#O dataset de varejo que analizamos é composto por informações de vendas de uma loja virtual que atua em todo o território nacional, vendendo produtos de diferentes departamentos. Além disso, a loja atua em diferentes canais de venda, como marketplace, loja própria, entre outros.
+# O dataset de varejo que analizamos é composto por informações de vendas de uma loja virtual que atua em todo o território nacional, vendendo produtos de diferentes departamentos. Além disso, a loja atua em diferentes canais de venda, como marketplace, loja própria, entre outros.
 
 Premissas do negócio:
-Ao analisar os dados, é importante ter em mente que existem algumas premissar a serem consideradas. A primeira delas é que, devido a um erro no banco de dados, algumas compras não possuem informações de UF (Unidade Federativa). Para solucionar esse problema, foi deficido que essas comprar serão consideradas como pertencentes ao Mato Grosso do Sul (MS). A segunda premissa é que o preço final de um produto não pode ser maior que o seu preço com frete.
+Ao analisar os dados, é importante ter em mente que existem algumas premissar a serem consideradas. A primeira delas é que, devido a um erro no banco de dados, algumas compras não possuem informações de UF (Unidade Federativa). Para solucionar esse problema, foi decidido que essas comprar serão consideradas como pertencentes ao Mato Grosso do Sul (MS). A segunda premissa é que o preço final de um produto não pode ser maior que o seu preço com frete.
 Assim foram eliminados as vendas cujo preço do produto era maior que seu preço com frete. Também existiam alguns produtos sem preço, neste caso, o preço com frete foi considerado igual ao preço do produto.
 Outra adequação feita, foi eliminar o departamento 'TV_e_Video'. Este departamento constava com poucas vendas e foi incorporado ao departamento 'TVs_e_Acessorios'.
 Quantos aos canais de vendas o mesmo procedimento foi feito à categoria 'APP', que foi eliminada e fundida à categoria 'Aplicativo'.
